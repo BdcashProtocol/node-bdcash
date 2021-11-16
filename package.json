@@ -1,0 +1,22 @@
+{
+  "name": "@BdcashProtocol/node-bdcash",
+  "version": "0.1.2",
+  "description": "bdcash RPC Node Client",
+  "main": "./bdcash.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/BdcashProtocol/node-bdcash.git"
+  },
+  "keywords": [
+    "bdcash"
+  ],
+  "author": "BdcashProtocol",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BdcashProtocol/node-bdcash/issues"
+  },
+  "homepage": "https://github.com/BdcashProtocol/node-bdcash"
+}
