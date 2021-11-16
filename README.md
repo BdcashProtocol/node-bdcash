@@ -1,5 +1,6 @@
 # A Node.js BDCash Client!
 
+<img src="https://docs.bdcashprotocol.com/assets/other/bdcash.png">
 
 node-bdcash is a bdcash client for Node.js. It is a fork of the excellent Kapitalize Bitcoin Client (now removed from GitHub) intended for use with most bdcashs. The purpose of this repository is:
 
