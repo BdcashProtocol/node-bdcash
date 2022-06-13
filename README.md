@@ -25,7 +25,7 @@ or
 Some code examples follow below.
 
 ```js
-var astracoin = require('node-bdcash()
+var bdcash = require('node-bdcash()
 
 bdcash.auth('myusername', 'mypassword')
 
