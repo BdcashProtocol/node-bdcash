@@ -1,35 +1,35 @@
 # A Node.js BDCash Client!
 
-<img src="https://docs.bdcashprotocol.com/assets/other/bdcash.png">
+<img src="https://docs.bdcashprotocol.com/assets/other/bdeco.png">
 
-node-bdcash is a bdcash client for Node.js. It is a fork of the excellent Kapitalize Bitcoin Client (now removed from GitHub) intended for use with most bdcashs. The purpose of this repository is:
+node-bdeco is a bdeco client for Node.js. It is a fork of the excellent Kapitalize Bitcoin Client (now removed from GitHub) intended for use with most bdcashs. The purpose of this repository is:
 
-* Provide a one-stop resource for the Node.js developer to get started with bdcash integration.
-* Promote Node.js development of bdcash web apps.
+* Provide a one-stop resource for the Node.js developer to get started with bdeco integration.
+* Promote Node.js development of bdeco web apps.
 * Identify and address any incompatibilities with the bdcashs and Bitcoin APIs that exist now and/or in the future.
 
 ## Dependencies
 
-You'll need a running instance of a [BDCash Daemon](https://github.com/BdcashProtocol/bdcash-protocol/releases) to connect with. 
+You'll need a running instance of a [BDCash Daemon](https://github.com/BdcashProtocol/bdeco-protocol/releases) to connect with. 
 
-Then, install the node-bdcash NPM package.
+Then, install the node-bdeco NPM package.
 
-`npm install node-bdcash`
+`npm install node-bdeco`
 
 or
 
-`npm install git://github.com/BdcashProtocol/node-bdcash/`
+`npm install git://github.com/BdcashProtocol/node-bdeco/`
 
 ## Examples
 
 Some code examples follow below.
 
 ```js
-var bdcash = require('node-bdcash()
+var bdeco = require('node-bdeco()
 
-bdcash.auth('myusername', 'mypassword')
+bdeco.auth('myusername', 'mypassword')
 
-bdcash.getDifficulty(function() {
+bdeco.getDifficulty(function() {
     console.log(arguments);
 })
 
@@ -40,9 +40,9 @@ bdcash.getDifficulty(function() {
 Pretty much everything is chainable.
 
 ```js
-var bdcash = require('node-bdcash')()
+var bdeco = require('node-bdeco')()
 
-bdcash
+bdeco
 .auth('MyUserName', 'mypassword')
 .getNewAddress()
 .getBalance()
@@ -53,7 +53,7 @@ bdcash
 The [Litecoin API](https://litecoin.info/Litecoin_API) is supported as direct methods. Use either camelcase or lowercase.
 
 ```js
-bdcash.getNewAddress(function(err, address) {
+bdeco.getNewAddress(function(err, address) {
     this.validateaddress(address, function(err, info) {
 
     })
@@ -65,9 +65,9 @@ Executes the given command with optional arguments. Function `callback` defaults
 All of the API commands are supported in lowercase or camelcase. Or uppercase. Anycase!
 
 ```js
-bdcash.exec('getNewAddress')
+bdeco.exec('getNewAddress')
 
-bdcash.exec('getbalance', function(err, balance) {
+bdeco.exec('getbalance', function(err, balance) {
 
 })
 ```
@@ -77,7 +77,7 @@ bdcash.exec('getbalance', function(err, balance) {
 Accepts either key & value strings or an Object containing settings, returns `this` for chainability.
 
 ```js
-bdcash.set('host', '127.0.0.1')
+bdeco.set('host', '127.0.0.1')
 ```
 
 ### .get(key [string])
@@ -85,7 +85,7 @@ bdcash.set('host', '127.0.0.1')
 Returns the specified option's value
 
 ```js
-bdcash.get('user')
+bdeco.get('user')
 ```
 
 ### .auth(user [string], pass [string])
@@ -106,7 +106,7 @@ All [Litecoin API](https://litecoin.info/Litecoin_API) commands are supported, i
 <tr>
 <td> addmultisigaddress </td>
 <td> [nrequired] ["key","key"] [account] </td>
-<td> <b>Currently only available on testnet</b> Add a nrequired-to-sign multisignature address to the wallet. Each key is a bdcash address or hex-encoded public key. If [account] is specified, assign address to [account]. </td>
+<td> <b>Currently only available on testnet</b> Add a nrequired-to-sign multisignature address to the wallet. Each key is a bdeco address or hex-encoded public key. If [account] is specified, assign address to [account]. </td>
 <td> N
 </td></tr>
 <tr>
@@ -136,7 +136,7 @@ All [Litecoin API](https://litecoin.info/Litecoin_API) commands are supported, i
 <tr>
 <td> getaccountaddress </td>
 <td> [account] </td>
-<td> Returns the current bdcash address for receiving payments to this account. </td>
+<td> Returns the current bdeco address for receiving payments to this account. </td>
 <td> N
 </td></tr>
 <tr>
@@ -242,7 +242,7 @@ All [Litecoin API](https://litecoin.info/Litecoin_API) commands are supported, i
 <tr>
 <td> getnewaddress </td>
 <td> [account] </td>
-<td> Returns a new bdcash address for receiving payments.  If [account] is specified (recommended), it is added to the address book so payments received with the address will be credited to [account]. </td>
+<td> Returns a new bdeco address for receiving payments.  If [account] is specified (recommended), it is added to the address book so payments received with the address will be credited to [account]. </td>
 <td> N
 </td></tr>
 <tr>
@@ -404,7 +404,7 @@ Generation is limited to [genproclimit] processors, -1 is unlimited. </td>
 <tr>
 <td> stop </td>
 <td> </td>
-<td> Stop bdcash server. </td>
+<td> Stop bdeco server. </td>
 <td> N
 </td></tr>
 <tr>
@@ -444,12 +444,12 @@ You may pass options to the initialization function or to the `set` method.
 
 ```js
 
-var bdcash = require('bdcash')({
+var bdeco = require('bdeco')({
     user:'user'
 })
 
-bdcash.set('pass', 'somn')
-bdcash.set({port:7142})
+bdeco.set('pass', 'somn')
+bdeco.set({port:7142})
 
 ```
 
@@ -467,7 +467,7 @@ Available options and default values:
 
 With an encryped wallet, any operation that accesses private keys requires a wallet unlock. A wallet is unlocked using the `walletpassphrase <passphrase> <timeout>` JSON-RPC method: the wallet will relock after `timeout` seconds.
 
-You may pass an optional function `passphrasecallback` to the `node-bdcash` initialization function to manage wallet unlocks. `passphrasecallback` should be a function accepting three arguments:
+You may pass an optional function `passphrasecallback` to the `node-bdeco` initialization function to manage wallet unlocks. `passphrasecallback` should be a function accepting three arguments:
 
     function(command, args, callback) {}
 
@@ -478,7 +478,7 @@ You may pass an optional function `passphrasecallback` to the `node-bdcash` init
 You may hard code your passphrase (not recommended) as follows:
 
 ```js
-var bdcash = require('node-bdcash')({
+var bdeco = require('node-bdeco')({
     passphrasecallback: function(command, args, callback) {
         callback(null, 'passphrase', 30);
     }
@@ -495,7 +495,7 @@ var rl = readline.createInterface({
   output: process.stdout
 })
 
-var bdcash = require('node-bdcash')({
+var bdeco = require('node-bdeco')({
   passphrasecallback: function(command, args, callback) {
     rl.question('Enter passphrase for "' + command + '" operation: ', function(passphrase) {
       if (passphrase) {
@@ -510,20 +510,20 @@ var bdcash = require('node-bdcash')({
 
 ### Secure RPC with SSL
 
-By default `bdcashd` exposes its JSON-RPC interface via HTTP; that is, all RPC commands are transmitted in plain text across the network! To secure the JSON-RPC channel you can supply `bdcashd` with a self-signed SSL certificate and an associated private key to enable HTTPS. For example, in your `bdcash.conf`:
+By default `bdcashd` exposes its JSON-RPC interface via HTTP; that is, all RPC commands are transmitted in plain text across the network! To secure the JSON-RPC channel you can supply `bdcashd` with a self-signed SSL certificate and an associated private key to enable HTTPS. For example, in your `bdeco.conf`:
 
     rpcssl=1
     rpcsslcertificatechainfile=/etc/ssl/certs/bdcashd.crt
     rpcsslprivatekeyfile=/etc/ssl/private/bdcashd.pem
 
-In order to securely access an SSL encrypted JSON-RPC interface you need a copy of the self-signed certificate from the server: in this case `bdcashd.crt`. Pass your self-signed certificate in the `ca` option and set `https: true` and node-bdcash is secured!
+In order to securely access an SSL encrypted JSON-RPC interface you need a copy of the self-signed certificate from the server: in this case `bdcashd.crt`. Pass your self-signed certificate in the `ca` option and set `https: true` and node-bdeco is secured!
     
 ```js
 var fs = require('fs')
 
 var ca = fs.readFileSync('bdcashd.crt')
 
-var bdcash = require('node-bdcash')({
+var bdeco = require('node-bdeco')({
   user: 'rpcusername',
   pass: 'rpcpassword',
   https: true,
